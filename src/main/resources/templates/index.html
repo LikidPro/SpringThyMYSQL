@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html xmlns:th="html://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h1>Hola mundo </h1>
+    <header th:replace="plantilla/template :: header"></header>
+    <div class="container">
+        <h1>Hola mundo </h1>
+    </div>
 
+<footer th:replace="plantilla/template :: footer"></footer>
 </body>
 </html>
