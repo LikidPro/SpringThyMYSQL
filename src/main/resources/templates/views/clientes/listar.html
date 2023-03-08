@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="html://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<header th:replace="plantilla/template :: header"></header>
+<div class="container">
+  <h1 th:text="${titulo}"></h1>
+</div>
+<div class="container">
+ <!--  <p th:text="${clientes}"></p> -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Ciudad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="cliente : ${clientes}">
+        <th  th:text="${cliente.id}"scope="row"></th>
+        <td th:text="${cliente.nombres}" ></td>
+        <td th:text="${cliente.apellidos}" ></td>
+        <td th:text="${cliente.telefono}" ></td>
+        <td th:text="${cliente.email}" ></td>
+        <td th:text="${cliente.ciudad.ciudad}"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+</html>

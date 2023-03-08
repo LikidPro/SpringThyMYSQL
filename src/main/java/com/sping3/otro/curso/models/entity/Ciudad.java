@@ -12,7 +12,7 @@ public class Ciudad implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String Cuidad;
+    private String ciudad;
 
     public void setId(Long id) {
         this.id = id;
@@ -22,19 +22,19 @@ public class Ciudad implements Serializable {
         return id;
     }
 
-    public String getCuidad() {
-        return Cuidad;
+    public String getCiudad() {
+        return ciudad;
     }
 
-    public void setCuidad(String cuidad) {
-        Cuidad = cuidad;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
     @Override
     public String toString() {
         return "Ciudad{" +
                 "id=" + id +
-                ", Cuidad='" + Cuidad + '\'' +
+                ", ciudad='" + ciudad + '\'' +
                 '}';
     }
 }
