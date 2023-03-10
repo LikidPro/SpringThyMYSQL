@@ -1,6 +1,9 @@
 package com.sping3.otro.curso.models.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 
 @Entity
@@ -11,8 +14,16 @@ public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String nombres,apellidos,telefono,email;
+    @NotEmpty
+    private String  nombres;
+    @NotEmpty
+    private String apellidos;
+    @NotEmpty
+    @Pattern(regexp = "[0-9]{4}-[0-9]{4}")
+    private String telefono;
+    @NotEmpty
+    @Email
+   private  String email;
     @ManyToOne
     @JoinColumn(name = "ciudades_id")
     private Ciudad ciudad;

@@ -10,16 +10,18 @@
   <h1 th:text="${titulo}"></h1>
 </div>
 <div class="container">
- <!--  <p th:text="${clientes}"></p> -->
+ <a  class="btn btn-primary btn-sm" th:href="@{/clientes/create}" th:text="${'Nuevo Cliente'}" title="Crear nuevo registro"></a>
   <table class="table">
     <thead>
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Nombres</th>
         <th scope="col">Apellidos</th>
-        <th scope="col">Telefono</th>
+        <th scope="col">Teléfono</th>
         <th scope="col">Correo</th>
         <th scope="col">Ciudad</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
       </tr>
     </thead>
     <tbody>
@@ -30,11 +32,14 @@
         <td th:text="${cliente.telefono}" ></td>
         <td th:text="${cliente.email}" ></td>
         <td th:text="${cliente.ciudad.ciudad}"></td>
+        <td > <a  class="btn btn-success btn-sm" th:href="@{/clientes/edit/} + ${cliente.id}" th:text="${'Editar'}" title="Editar cliente"></a></td>
+        <td > <a  class="btn btn-danger btn-sm" th:href="@{/clientes/delete/} + ${cliente.id}" th:text="${'Borrar'}" title="Eliminar cliente" onclick="return confirm('¿Esta seguro que desea eliminar este cliente?')"></a></td>
       </tr>
     </tbody>
   </table>
 </div>
 
 <footer th:replace="plantilla/template :: footer"></footer>
+
 </body>
 </html>
