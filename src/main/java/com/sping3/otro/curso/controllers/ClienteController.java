@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class ClienteController {
 
     @Autowired
     private CiudadService ciudadService;
+
 
     @GetMapping("/")
     public String getClientes(Model model) {
@@ -93,4 +95,6 @@ public class ClienteController {
             return "redirect:/clientes/";
         }
     }
+
+
 }

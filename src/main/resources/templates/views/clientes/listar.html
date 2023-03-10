@@ -11,6 +11,9 @@
 </div>
 <div class="container">
  <a  class="btn btn-primary btn-sm" th:href="@{/clientes/create}" th:text="${'Nuevo Cliente'}" title="Crear nuevo registro"></a>
+ <a  class="nav-link d-flex justify-content-end" th:href="@{/clientes/(format=pdf)}"  title="Exportar a PDF" target="_blank">
+  <img class="img-responsive center-box " th:src="@{/images/pdf.png} " height="34px" alt="">
+ </a>
   <table class="table">
     <thead>
       <tr>
